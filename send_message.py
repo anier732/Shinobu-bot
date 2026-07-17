@@ -1,13 +1,15 @@
 import os
 import requests
 
+# 環境変数からウェブフックURLを取得
 webhook_url = os.environ.get('DISCORD_WEBHOOK')
 
-# 送るメッセージを固定するよ
+# 送るメッセージ
 message = {"content": "胡蝶しのぶの足の裏🦶🏻🦶🏼🦶🏽🦶🏾🦶🏿🦶💨"}
 
+# 送信処理
 if webhook_url:
     response = requests.post(webhook_url, json=message)
-    print(f"Status Code: {response.status_code}")
+    print(f"Sent: {response.status_code}")
 else:
-    print("Webhook URLが設定されていません！")
+    print("Error: Webhook URLが設定されていません")
