@@ -2,7 +2,9 @@ import os
 import requests
 
 webhook_url = os.environ.get('DISCORD_WEBHOOK')
-message = {"content": "しのぶボットが起動したよ！"}
+
+# 送るメッセージを固定するよ
+message = {"content": "胡蝶しのぶの足の裏🦶🏻🦶🏼🦶🏽🦶🏾🦶🏿🦶💨"}
 
 if webhook_url:
     response = requests.post(webhook_url, json=message)
